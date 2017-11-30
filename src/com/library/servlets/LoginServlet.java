@@ -70,7 +70,7 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("loginUser", username);
 				session.setAttribute("loginType", type);
 			}else{
-				request.setAttribute("errorMessage", "User for username "+username+" does not exist.");
+				request.setAttribute("errorMessage", "User for username "+username+" and role "+type+" does not exist.");
 			}
 		} catch (LibraryException e) {
 			request.setAttribute("errorMessage", e.getMessage());

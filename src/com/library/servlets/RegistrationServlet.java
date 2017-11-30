@@ -58,9 +58,13 @@ public class RegistrationServlet extends HttpServlet {
 		String uniqueId = request.getParameter("uId");
 		String idType = request.getParameter("idType");
 		String loginType = request.getParameter("userType");
+		String activeflag = "false";
+		HttpSession session = request.getSession();
+		if (session != null && "admin".equals((String) session.getAttribute("loginType"))){
+			activeflag="true";
+		}
 
 		if (loginType.equalsIgnoreCase("admin") || loginType.equalsIgnoreCase("staff")) {
-			HttpSession session = request.getSession();
 			if (session != null && !"admin".equals((String) session.getAttribute("loginType"))) {
 				request.setAttribute("errorMessage", "Only Administrator can register Admin or Staff.");
 			}
@@ -74,7 +78,7 @@ public class RegistrationServlet extends HttpServlet {
 			Boolean status = false;
 			try {
 				status = memberService.registerNewMember(username, password, fname, lname, phoneN, emailId,
-						uniqueId, idType, loginType);
+						uniqueId, idType, loginType, activeflag);
 				if (status) {
 					request.setAttribute("successMessage",
 							"New Member " + fname + " " + lname + " registered Successfully");

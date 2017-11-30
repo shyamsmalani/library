@@ -15,7 +15,7 @@ public class MemberService implements MemberServiceInf {
 
 	@Override
 	public boolean registerNewMember(String loginId, String password, String fname, String lname, String phoneN,
-			String emailId, String uniqueId, String idType, String membertype) throws LibraryException {
+			String emailId, String uniqueId, String idType, String membertype, String activFlag) throws LibraryException {
 		boolean status = false;
 		if (loginMapper.userExist(loginId)) {
 			throw new LibraryException("User " + loginId + " already exist.");
@@ -26,8 +26,8 @@ public class MemberService implements MemberServiceInf {
 		if (details == null || details.getMember_Id() == null) {
 			return false;
 		}
-		loginMapper.createUser(loginId, password, membertype, details.getMember_Id());
-		LoginDetails loDetails = loginMapper.getLoginUser(loginId, password, "false");
+		loginMapper.createUser(loginId, password, membertype, details.getMember_Id(), activFlag);
+		LoginDetails loDetails = loginMapper.getLoginUser(loginId, password, activFlag);
 		if (loDetails != null) {
 			status = true;
 		}

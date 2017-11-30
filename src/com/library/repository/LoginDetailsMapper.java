@@ -18,14 +18,14 @@ public class LoginDetailsMapper implements LoginDetailsFinderInf, LoginDetailsPr
 	Logger logger = Logger.getLogger("LoginDetailsMapper");
 
 	@Override
-	public void createUser(String loginId, String password, String membertype, Integer memberId)
+	public void createUser(String loginId, String password, String membertype, Integer memberId, String activFlag)
 			throws LibraryException {
 		try {
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Creating LoginDetails record in LoginDetailsMapper.createUser.");
 			Statement stmt = con.createStatement();
 			String sql = "INSERT INTO login_details (member_id, loginId, lpassword, active_falg, login_type) "
-					+ "VALUES ( '" + memberId + "', '" + loginId + "', '" + password + "', 'false', '" + membertype
+					+ "VALUES ( '" + memberId + "', '" + loginId + "', '" + password + "', '"+activFlag+"', '" + membertype
 					+ "' )";
 			System.out.println(sql);
 			stmt.execute(sql);

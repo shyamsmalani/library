@@ -14,7 +14,8 @@ public interface MemberServiceInf {
 			String emailId, 
 			String uniqueId, 
 			String idType, 
-			String membertype) throws LibraryException;
+			String membertype,
+			String activFlag) throws LibraryException;
 	
 	public void deleteMember(String[] id) throws LibraryException;
 	
