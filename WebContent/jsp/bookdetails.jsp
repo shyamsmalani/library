@@ -9,10 +9,23 @@
 
 <script type="text/javascript">
 	function validate() {
-		if (!isNaN(document.bookForm.searchType.value)) {
+		var searchBy = document.bookForm.searchType.value;
+		if (!isNaN(searchBy)) {
 			alert("Search By Must be selected.")
 			document.bookForm.searchType.value = ""
 			document.bookForm.searchType.focus()
+			return false
+		}
+		if ((searchBy == 'title' || searchBy == 'ISBN') && !isNaN(document.bookForm.booksearch.value)) {
+			alert("Search String must not be blank.")
+			document.bookForm.booksearch.value = ""
+			document.bookForm.booksearch.focus()
+			return false
+		}
+		if (searchBy == 'type' && !isNaN(document.bookForm.booktype.value)) {
+			alert("Subject-Type must not be blank.")
+			document.bookForm.booktype.value = ""
+			document.bookForm.booktype.focus()
 			return false
 		}
 		return true
@@ -203,15 +216,10 @@
 				</h3>
 
 				<p>
-					<a href="http://www.templatemo.com/page/1" target="_parent">Free
-						Projects</a> are provided by <a href="http://www.javatpoint.com"
-						target="_parent">javatpoint.com</a> for everyone. Feel free to
-					download, edit and apply this project for your personal or business
-					websites. Validate <a href="http://www.javatpoint.com">corejava</a>
-					&amp; <a href="http://www.javatpoint.com">servlet</a>. Credit goes
-					to <a href="http://www.javatpoint.com/">Public Domain Pictures</a>
-					for photos used in this template. Nam ut libero at lacus feugiat
-					tincidunt vitae sed ipsum.
+					The <font color=blue>EDU Library</font> is a place for reading, studying,
+					and writing; participating in programs, activities and meetings,
+					and, for using or borrowing Library materials. We have world class books and biggest stocks of different books. Our aim to evolve our services and materials keeps us updating with new stocks of books and other reading material.
+					Please find below list of new Arrivals:
 				</p>
 
 				<div class="cleaner_h20"></div>
@@ -225,13 +233,12 @@
 				<div class="section_w250 float_r">
 
 					<ul class="list_01">
-						<li>Praesent condimentum magna ut</li>
-						<li>Nunc luctus eros eu enim gravida ut</li>
-						<li>Phasellus nec ante eget felis</li>
-						<li>Morbi pellentesque tellus adipiscing</li>
-						<li>Nunc accumsan sagittis sem, ut</li>
-						<li>Nunc luctus eros eu enim gravida ut</li>
-						<li>Phasellus nec ante eget felis</li>
+						<li>Exit West - <font color=blue>Mohsin Hamid</font></li>						
+						<li>Little Fires Everywhere - <font color=blue>Celeste Ng </font></li>
+						<li>Manhatten Beach - <font color=blue>Jennifer Egan</font></li>
+						<li>Test Of West - <font color=blue>K. S kamat</font></li>
+						<li>My Story - <font color=blue>A. S. Sainy</font></li>
+						<li>Lincon in the Bardo - <font color=blue>George Sounders</font></li>
 					</ul>
 
 				</div>

@@ -49,7 +49,7 @@
 					<ul style="color: black;">
 						<li>Director : Mr. A. K. Singhal</li>
 						<li>precedent : Mr. S. S. Malani</li>
-						<li>Account Chief : Mrs. P. S. Malani</li>
+						<li>Account Chief : Mrs. P. Kabra</li>
 					</ul>
 				</div>
 
