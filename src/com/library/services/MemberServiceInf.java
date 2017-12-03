@@ -19,7 +19,7 @@ public interface MemberServiceInf {
 	
 	public void deleteMember(String[] id) throws LibraryException;
 	
-	public MembarDetails getMember(String loginId) throws LibraryException;
+	public Boolean memberExist(String loginId) throws LibraryException;
 	
 	public void inactiveMember(String[] id) throws LibraryException;
 	

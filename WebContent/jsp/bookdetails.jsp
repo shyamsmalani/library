@@ -8,30 +8,27 @@
 	rel="stylesheet" type="text/css" />
 
 <script type="text/javascript">
-	function validate(form) {
-		for (var i = 0; i < form.elements.length; i++) {
-			if (form.elements[i].value == "") {
-				alert("Fill out all Fields")
-				document.loginForm.username.focus()
-				return false
+	function validate() {
+		if (!isNaN(document.bookForm.searchType.value)) {
+			alert("Search By Must be selected.")
+			document.bookForm.searchType.value = ""
+			document.bookForm.searchType.focus()
+			return false
+		}
+		return true
+	}
+
+	try {
+		function loadDoc() {
+			if(document.bookForm.searchType.value == 'type'){
+				document.getElementById("subjectType").style.visibility="visible";
+			}else{
+				document.bookForm.booktype.value = ""
+				document.getElementById("subjectType").style.visibility="collapse";
 			}
 		}
-
-		if (!isNaN(document.loginForm.username.value)) {
-			alert("User Name  must  be  char's & can't be null")
-			document.loginForm.username.value = ""
-			document.loginForm.username.focus()
-			return false
-		}
-
-		if (!isNaN(document.loginForm.password.value)) {
-			alert("Password  must  be  char's & can't be null")
-			document.loginForm.password.value = ""
-			document.loginForm.password.focus()
-			return false
-		}
-
-		return true
+	} catch (err) {
+		alert(err.message);
 	}
 </script>
 </head>
@@ -49,7 +46,7 @@
 			<div class="content_box">
 
 				<div valign="top">
-					<form name="loginForm" action="BookDetailServlet" method="post">
+					<form name="bookForm" action="BookDetailServlet" method="post">
 						<table cellspacing="2" cellpadding="2">
 							<tr>
 
@@ -68,14 +65,14 @@
 
 							<tr>
 								<td>Search By:</td>
-								<td><select name="searchType">
+								<td><select name="searchType" onchange="loadDoc()">
 										<option value="">-select-</option>
 										<option value="ISBN">Book ISBN</option>
 										<option value="title">Book Title</option>
 										<option value="type">Book Type</option>
 								</select></td>
 							</tr>
-							<tr>
+							<tr style="visibility:collapse;" id="subjectType">
 								<td>Subject-Type:</td>
 								<td><select name="booktype">
 										<option value="">-select-</option>
@@ -104,8 +101,9 @@
 							</tr>
 							<tr>
 								<td></td>
-								<td><input type="submit" name="submittype" value="Search" /> <input
-									type="reset" value="Reset" /></td>
+								<td><input type="submit" name="submittype" value="Search"
+									onclick="return validate()" /> <input type="reset"
+									value="Reset" /></td>
 							</tr>
 						</table>
 
@@ -167,33 +165,31 @@
 										<c:if
 											test="${sessionScope.loginUser ne null && (sessionScope.loginType eq 'admin' || sessionScope.loginType eq 'staff')}">
 											<c:choose>
-											<c:when
-												test="${books.availabilityStatus}">
-												<td><input type="checkbox" name="deleteId"
-												value="${books.book_Id}" /></td>
-											</c:when>
-											<c:when
-												test="${!books.availabilityStatus}">
-												<td><input type="checkbox" name="deleteId"
-												value="${books.book_Id}" disabled="disabled"/></td>
-											</c:when>
+												<c:when test="${books.availabilityStatus}">
+													<td><input type="checkbox" name="deleteId"
+														value="${books.book_Id}" /></td>
+												</c:when>
+												<c:when test="${!books.availabilityStatus}">
+													<td><input type="checkbox" name="deleteId"
+														value="${books.book_Id}" disabled="disabled" /></td>
+												</c:when>
 
-										</c:choose>
-											
-											
+											</c:choose>
+
+
 										</c:if>
 										<td><font> <a href="#">Book Summary</a></font></td>
 									</tr>
 								</c:forEach>
-															
+
 							</table>
-							<br/>
+							<br />
 							<table>
-							<tr>
-								<td></td>
-								<td><input type="submit" name="submittype" value="Submit" /> <input
-									type="reset" value="Reset" /></td>
-							</tr>
+								<tr>
+									<td></td>
+									<td><input type="submit" name="submittype" value="Submit" />
+										<input type="reset" value="Reset" /></td>
+								</tr>
 							</table>
 						</c:if>
 						<br />

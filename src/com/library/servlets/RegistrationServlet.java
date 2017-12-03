@@ -36,9 +36,24 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nextPage = "/jsp/memberRegistration.jsp";
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-		dispatcher.forward(request, response);
+		String username = request.getParameter("username");
+
+		if (username != null) {
+			response.setContentType("text/plain");
+			response.setCharacterEncoding("UTF-8");
+			try {
+				if (memberService.memberExist(username)) {
+					response.getWriter().write("User Already Exist!!");
+				}
+			} catch (LibraryException e) {
+				e.printStackTrace();
+			}
+		} else {
+			String nextPage = "/jsp/memberRegistration.jsp";
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+			dispatcher.forward(request, response);
+		}
+
 	}
 
 	/**
@@ -60,8 +75,8 @@ public class RegistrationServlet extends HttpServlet {
 		String loginType = request.getParameter("userType");
 		String activeflag = "false";
 		HttpSession session = request.getSession();
-		if (session != null && "admin".equals((String) session.getAttribute("loginType"))){
-			activeflag="true";
+		if (session != null && "admin".equals((String) session.getAttribute("loginType"))) {
+			activeflag = "true";
 		}
 
 		if (loginType.equalsIgnoreCase("admin") || loginType.equalsIgnoreCase("staff")) {
@@ -77,8 +92,8 @@ public class RegistrationServlet extends HttpServlet {
 		if (request.getAttribute("errorMessage") == null) {
 			Boolean status = false;
 			try {
-				status = memberService.registerNewMember(username, password, fname, lname, phoneN, emailId,
-						uniqueId, idType, loginType, activeflag);
+				status = memberService.registerNewMember(username, password, fname, lname, phoneN, emailId, uniqueId,
+						idType, loginType, activeflag);
 				if (status) {
 					request.setAttribute("successMessage",
 							"New Member " + fname + " " + lname + " registered Successfully");
@@ -87,7 +102,7 @@ public class RegistrationServlet extends HttpServlet {
 				}
 			} catch (LibraryException e) {
 				request.setAttribute("errorMessage", e.getMessage());
-			}			
+			}
 		}
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);

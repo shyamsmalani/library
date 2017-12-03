@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,31 +8,46 @@
 	rel="stylesheet" type="text/css" />
 
 <script type="text/javascript">
-	
 	function validate(form) {
 		for (var i = 0; i < form.elements.length; i++) {
 			if (form.elements[i].value == "") {
 				alert("Fill out all Fields")
-				document.loginForm.username.focus()
+				document.regForm.username.focus()
 				return false
 			}
 		}
 
-		if (!isNaN(document.loginForm.username.value)) {
+		if (!isNaN(document.regForm.username.value)) {
 			alert("User Name  must  be  char's & can't be null")
-			document.loginForm.username.value = ""
-			document.loginForm.username.focus()
+			document.regForm.username.value = ""
+			document.regForm.username.focus()
 			return false
 		}
 
-		if (!isNaN(document.loginForm.password.value)) {
+		if (!isNaN(document.regForm.password.value)) {
 			alert("Password  must  be  char's & can't be null")
-			document.loginForm.password.value = ""
-			document.loginForm.password.focus()
+			document.regForm.password.value = ""
+			document.regForm.password.focus()
 			return false
 		}
 
 		return true
+	}
+	try {
+		function loadDoc() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200
+						&& this.responseText != null) {
+					document.getElementById("message").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("GET", "RegistrationServlet?username="
+					+ document.regForm.username.value, true);
+			xhttp.send();
+		}
+	} catch (err) {
+		alert(err.message);
 	}
 </script>
 </head>
@@ -50,7 +65,7 @@
 			<div class="content_box">
 
 				<div valign="top">
-					<form name="loginForm" onsubmit="return validate(this)"
+					<form name="regForm" onsubmit="return validate(this)"
 						action="RegistrationServlet" method="post">
 						<table cellspacing="2" cellpadding="2">
 							<tr>
@@ -62,9 +77,10 @@
 								<td colspan="4"></td>
 							</tr>
 							<tr>
-								<td colspan="4"><font color="green"><c:out value="${requestScope.successMessage}"></c:out> </font>
-								<font color="red"><c:out value="${requestScope.errorMessage}"></c:out> </font>
-								</td>
+								<td colspan="4"><font color="green"><c:out
+											value="${requestScope.successMessage}"></c:out> </font> <font
+									color="red"><c:out value="${requestScope.errorMessage}"></c:out>
+								</font></td>
 							</tr>
 							<tr>
 								<td>Access Type:</td>
@@ -77,7 +93,9 @@
 							</tr>
 							<tr>
 								<td>Login Id:</td>
-								<td><input type="text" name="username" /></td>
+								<td><input type="text" name="username" id="username"
+									onchange="loadDoc()" />
+								<div style="color: red;" id="message"></div></td>
 							</tr>
 							<tr>
 								<td>Password:</td>
@@ -121,7 +139,7 @@
 								<td>Unique-Id:</td>
 								<td><input type="text" name="uId" /></td>
 							</tr>
-							
+
 							<tr>
 								<td colspan="4"></td>
 							</tr>
@@ -179,8 +197,8 @@
 			</div>
 			<div class="content_box_bottom"></div>
 
-			
-			
+
+
 
 		</div>
 		<!-- end of content -->
