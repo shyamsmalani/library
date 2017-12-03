@@ -1,7 +1,8 @@
 <html>
 <head>
 <title>Library Home</title>
-<link href="${pageContext.request.contextPath}/css/library_style.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/css/library_style.css"
+	rel="stylesheet" type="text/css" />
 <style>
 </style>
 <script type="text/javascript" src="script.js">
@@ -24,35 +25,32 @@
 				<h2>Welcome to Education</h2>
 
 				<p>
-					<a href="http://www.templatemo.com/page/1" target="_parent">Free
-						Projects</a> are provided by <a href="http://www.javatpoint.com"
-						target="_parent">javatpoint.com</a> for everyone. Feel free to
-					download, edit and apply this project for your personal or business
-					websites. Validate <a href="http://www.javatpoint.com">corejava</a>
-					&amp; <a href="http://www.javatpoint.com">servlet</a>. Credit goes
-					to <a href="http://www.javatpoint.com/">Public Domain Pictures</a>
-					for photos used in this template. Nam ut libero at lacus feugiat
-					tincidunt vitae sed ipsum.
+					The <font color=blue>EDU Library</font> is the biggest library of
+					Bhopal and the well known library chain in the Country by number of
+					items catalogued. It holds well over 150 million items from many
+					countries. As a legal deposit library, the <font color=blue>EDU
+						Library</font> receives copies of all books produced in the Country,
+					including a significant proportion of overseas titles distributed
+					in the India. The Library is a non-departmental public body
+					sponsored by the Department for Culture, Media and Sport.
 				</p>
+
 
 				<div class="cleaner_h20"></div>
 
 				<div class="image_fl">
-					<img src="${pageContext.request.contextPath}/images/library_images01.jpg" alt="image" />
+					<img
+						src="${pageContext.request.contextPath}/images/library_images01.jpg"
+						alt="image" />
 				</div>
 
 				<div class="section_w250 float_r">
 
-					<ul class="list_01">
-						<li>Praesent condimentum magna ut</li>
-						<li>Nunc luctus eros eu enim gravida ut</li>
-						<li>Phasellus nec ante eget felis</li>
-						<li>Morbi pellentesque tellus adipiscing</li>
-						<li>Nunc accumsan sagittis sem, ut</li>
-						<li>Nunc luctus eros eu enim</li>
-
+					<ul style="color: black;">
+						<li>Director : Mr. A. K. Singhal</li>
+						<li>precedent : Mr. S. S. Malani</li>
+						<li>Account Chief : Mrs. P. S. Malani</li>
 					</ul>
-
 				</div>
 
 				<div class="cleaner"></div>
@@ -64,18 +62,22 @@
 				<h2>Testimonial</h2>
 
 				<div class="section_w250 float_l">
-					<h3>Praesent sollicitudin</h3>
-					<p>Nullam faucibus volutpat sapien sit amet tristique.
-						Suspendisse venenatis, urna nec rhoncus suscipit, turpis turpis
-						auctor nisi.</p>
+					<h3>By: Anand Kumar</h3>
+					<p>The staff are friendly and try and help as much as they can.
+
+						The Harry Potter exhibition is spectacular! So much to read but it
+						is fascinating! Especially reading the annotated drafts!.</p>
 
 				</div>
 
 				<div class="section_w250 float_r">
-					<h3>Quisque blandit</h3>
-					<p>Morbi blandit ipsum sed purus vestibulum bibendum. Lorem
-						ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nibh
-						sed tellus.</p>
+					<h3>By: Shekhar Raut</h3>
+					<p>An excellent place for any sort of research or just to visit
+						for exhibitions and displays. If you want to use the reading rooms
+						you will need to get a readers ticket, so take ID if you think
+						you'll want to see any books or other original materials. Some
+						items are stored off site so always check before you go. Staff are
+						friendly and helpful and the building is fantastic.</p>
 
 				</div>
 

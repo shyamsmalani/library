@@ -1,202 +1,155 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Education</title>
-<meta name="keywords" content="free css templates, education, school, college, university, templatemo.com" />
-<meta name="description" content="Education template is for academic related websites" />
-<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<title>ContactUS</title>
+
+<link href="${pageContext.request.contextPath}/css/library_style.css"
+	rel="stylesheet" type="text/css" />
 
 <script type="text/javascript">
-function ctck()
-{
-var sds = document.getElementById("dum");
-if(sds == null){alert("You are using a free package.\n You are not allowed to remove the tag.\n");}
-}
-</script>
-
-<SCRIPT LANGUAGE="JavaScript">
-function dil(form)
-{
-   for(var i=0; i<form.elements.length; i++)
-   {
-		if(form.elements[i].value == "")
-		{
-		   alert("Fill out all Fields")
-		   document.F1.accountno.focus()
-		   return false
+	function validate(form) {
+		for (var i = 0; i < form.elements.length; i++) {
+			if (form.elements[i].value == "") {
+				alert("Fill out all Fields")
+				document.regForm.username.focus()
+				return false
+			}
 		}
-   }
 
-   if(isNaN(document.F1.accountno.value))
-   {
-       alert("Accountno must  be  number & can't be null")
-	   document.F1.accountno.value=""
-	   document.F1.accountno.focus()
-	   return false
-   }
-   if(!isNaN(document.F1.username.value))
-   {
-       alert("User Name  must  be  char's & can't be null")
-	   document.F1.username.value=""
-	   document.F1.username.focus()
-	   return false
-   }
+		if (!isNaN(document.regForm.username.value)) {
+			alert("User Name  must  be  char's & can't be null")
+			document.regForm.username.value = ""
+			document.regForm.username.focus()
+			return false
+		}
 
-   if(!isNaN(document.F1.password.value))
-   {
-       alert("Password  must  be  char's & can't be null")
-	   document.F1.password.value=""
-	   document.F1.password.focus()
-	   return false
-   }
-   
-   return true   
-}
-</SCRIPT>
+		if (!isNaN(document.regForm.password.value)) {
+			alert("Password  must  be  char's & can't be null")
+			document.regForm.password.value = ""
+			document.regForm.password.focus()
+			return false
+		}
 
+		return true
+	}
+</script>
 </head>
 <body>
-<div id="templatemo_header_wrapper">
-    <div id="templatemo_header">
-    	<div id="site_title">
-            <h1><a href="http://www.cstpoint.com" target="_parent">
-                <img src="images/templatemo_logo.png" alt="Site Title" />
-                <span>free css templates</span>
-            </a></h1>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet, ipsum bibendum pretium volutpat, diam magna facilisis ante.</p>
-    
-    </div> <!-- end of templatemo_header -->
+	<jsp:include page="/jsp/header.jsp"></jsp:include>
 
-</div> <!-- end of templatemo_menu_wrapper -->
+	<jsp:include page="/jsp/mainmenu.jsp"></jsp:include>
 
-<div id="templatemo_menu_wrapper">
-    <div id="templatemo_menu">
-        
-         <ul>
-        <li><a href="index.html">Home</a></li>
-                   <li><a href="index.html">Home</a></li>
-                    <li><a href="admin.jsp">Adminstrator</a></li>
-                    <li><a href="member.jsp">Library Member</a></li>
-                    <li><a href="bookdetailsforbookdetails.jsp">Book Details</a></li>
-                     <li><a href="aboutus.jsp">About Us</a></li>
-                    <li><a href="contactus.jsp">Contact Us</a></li>
-                </ul>    	
-     
-    </div> <!-- end of templatemo_menu -->
-</div>
+	<div id="templatemo_content_wrapper">
 
-<div id="templatemo_content_wrapper">
+		<jsp:include page="/jsp/leftNav.jsp"></jsp:include>
 
-	<div id="templatemo_sidebar">
-    
-    	<div class="sidebar_box">
-        	
-            <h2>Announcements</h2>
-            
-            <div class="news_box">
-                <a href="#">Fusce sit amet nunc lectus, at pretium augue. Pellentesque tortor felis.</a>
-                <p class="post_info">Posted by <a href="#">Admin</a> on <span>April 30, 2048</span></p>
-            </div>
-            
-            <div class="news_box">
-                <a href="#">Integer imperdiet, justo ut venenatis vehicula, magna mi placerat felis.</a>
-                <p class="post_info">Posted by <a href="#">Admin</a> on <span>April 22, 2048</span></p>
-            </div>
-            
-            <div class="news_box">
-                <a href="#">Sed justo dolor, convallis at, vestibulum vitae, elementum eu, pede.</a>
-                <p class="post_info">Posted by <a href="#">Admin</a> on <span>April 14, 2048</span></p>
-            </div>
-        
-        </div><div class="sidebar_box_bottom"></div>
-        
-        <div class="sidebar_box">
-			
-           	<h2>JAVA</h2>
-            
-            <div class="section_w250 float_l">
-				<h3>Core Java</h3>            
-				<p>oops is a concept of core java so. javatpoint.com ,is realy a very good website we must visit,on this web site,to know java in defth.</p>
-           </div>
-            
-            <div class="cleaner"></div>
-        
-        </div><div class="sidebar_box_bottom"></div>
-    
-    </div> <!-- end of sidebar -->
-    
-     <div id="templatemo_content">
-    
-    	<div class="content_box">
-    
-    	<td valign="top">
-    	
-  <form >
-				   <table height="250" border="0" cellspacing="10" cellpadding="8">	
-				 
-	    			<tr><td><a>OUR PHONE NUMBER:</a></td><td><a>011-88888</a> </td></tr> 					
-					<tr><td><a>OUR PHONE NUMBER:</a></td><td><a>011-99999 </a></td></tr>
-			    	</table>
-				</form>
-              	<h2>JAVA</h2>
-            
-            <div class="section_w250 float_l">
-				<h3>Core Java</h3>            
-				<p>oops is a concept of core java so. javatpoint.com ,is realy a very good website we must visit,on this web site,to know java in defth.</p>
-           </div>
-          
-				</form>
-  		
-			</td>
-	
-        
-        	<div class="cleaner"></div>
-        </div><div class="content_box_bottom"></div>
-        
-        <div class="content_box">
-        
-        	<h2>Testimonial</h2>
-            
-            <div class="section_w250 float_l">
-				<h3>Praesent sollicitudin</h3>            
-				<p>Nullam faucibus volutpat sapien sit amet tristique. Suspendisse venenatis, urna nec rhoncus suscipit, turpis turpis auctor nisi.</p>
-            
-            </div>  
-            
-            <div class="section_w250 float_r">
-				<h3>Quisque blandit</h3>            
-				<p>Morbi blandit ipsum sed purus vestibulum bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nibh sed tellus.</p>
-            
-            </div>            
-           
-        
-        	<div class="cleaner"></div>
-        </div><div class="content_box_bottom"></div>
-    
-    </div> <!-- end of content -->
-    
-    <div class="cleaner"></div>
+		<div id="templatemo_content">
 
-</div>
+			<div class="content_box">
 
-<div id="templatemo_footer_wrapper">
+				<div valign="top">
+					<form name="contactUsForm" action="ContactUsServlet" method="post">
+						<table cellspacing="2" cellpadding="2">
+							<tr>
 
-    <div id="templatemo_footer">
-    
-        <ul class="footer_menu">
-                  <li><a href="index.html">Home</a></li>
-                    <li><a href="admin.jsp">Adminstrator</a></li>
-                    <li><a href="member.jsp">Library Member</a></li>
-                    <li><a href="bookdetailsforbookdetails.jsp">Book Details</a></li>
-                     <li><a href="aboutus.jsp">About Us</a></li>
-                    <li><a href="contactus.jsp">Contact Us</a></li>
-      </ul>
-                
-                Copyright © 2048 <a href="#">Your Company Name</a> | 
-                <a href="http://www.javatpoint.com" target="_parent">Website Projects</a> by <a href="http://www.javatpoint.com" target="_parent">javatpoint.com</a></div>
-    
-</div>
-<div align=center>This project  downloaded form <a href='http://www.javatpoint.com/'>free website projects</a></div></body>
+								<td colspan="4"><font color="blue">Welcome To
+										ContactUs.</font></td>
+							</tr>
+							<tr>
+								<td colspan="4"></td>
+							</tr>
+							<tr>
+								<td colspan="4"><font color="green"><c:out
+											value="${requestScope.successMessage}"></c:out> </font> <font
+									color="red"><c:out value="${requestScope.errorMessage}"></c:out>
+								</font></td>
+							</tr>
+
+							<tr>
+								<td>Name :</td>
+								<td><input type="text" name="username" id="username"
+									onchange="loadDoc()" />
+									<div style="color: red;" id="message"></div></td>
+							</tr>
+							<tr>
+								<td>Email Id :</td>
+								<td><input type="password" name="password" /></td>
+							</tr>
+							<tr>
+								<td>Mobile Number:</td>
+								<td><input type="text" name="mnum" /></td>
+							</tr>
+							<tr>
+								<td>Web Address :</td>
+								<td><input type="password" name="cpassword" /></td>
+							</tr>
+							<tr>
+								<td>Comment(Optional):</td>
+								<td><textarea name="description" rows="6" cols="40"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><input type="button" value="Submit" /> <input
+									type="reset" value="Reset" /></td>
+							</tr>
+						</table>
+					</form>
+
+				</div>
+
+
+				<h3>
+					<font color=blue> About Library EDU </font>
+				</h3>
+
+				<p>
+					The <font color=blue>EDU Library</font> is the biggest library of Bhopal and 
+					the well known library chain in the Country by number of items catalogued. 
+					It holds well over 150 million items from many countries. As a legal deposit library, 
+					the  <font color=blue>EDU Library</font> receives copies of all books produced in the Country, 
+					including a significant proportion of overseas titles distributed in the India. 
+					The Library is a non-departmental public body sponsored by the Department for Culture,
+					 Media and Sport.
+				</p>
+
+				<div class="cleaner_h20"></div>
+
+				<div class="image_fl">
+					<img
+						src="${pageContext.request.contextPath}/images/library_images01.jpg"
+						alt="image" />
+				</div>
+
+				<div class="section_w250 float_r">
+
+					<ul style="color: black;">
+						<li>Director : Mr. A. K. Singhal</li>
+						<li>precedent : Mr. S. S. Malani</li>
+						<li>Account Chief : Mrs. P. S. Malani</li>
+					</ul>
+
+				</div>
+
+
+				<div class="cleaner"></div>
+			</div>
+			<div class="content_box_bottom"></div>
+
+
+
+
+		</div>
+		<!-- end of content -->
+
+		<div class="cleaner"></div>
+
+	</div>
+
+	<jsp:include page="/jsp/footer.jsp"></jsp:include>
+</body>
 </html>
