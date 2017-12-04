@@ -101,7 +101,7 @@ public class LoginDetailsMapper implements LoginDetailsFinderInf, LoginDetailsPr
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Creating LoginDetails record in LoginDetailsMapper.deleteUser.");
 			Statement stmt = con.createStatement();
-			String sql = "DELETE FROM library.login_details WHERE member_id in("
+			String sql = "DELETE FROM login_details WHERE member_id in("
 					+ LibraryUtills.getArrayToString(memberid) + ")";
 			System.out.println(sql);
 			stmt.execute(sql);
@@ -119,7 +119,7 @@ public class LoginDetailsMapper implements LoginDetailsFinderInf, LoginDetailsPr
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Creating LoginDetails record in LoginDetailsMapper.activateUser.");
 			Statement stmt = con.createStatement();
-			String sql = "UPDATE library.login_details SET active_falg='true'  WHERE member_id in("
+			String sql = "UPDATE login_details SET active_falg='true'  WHERE member_id in("
 					+ LibraryUtills.getArrayToString(memberid) + ")";
 			System.out.println(sql);
 			stmt.execute(sql);
@@ -137,7 +137,7 @@ public class LoginDetailsMapper implements LoginDetailsFinderInf, LoginDetailsPr
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Creating LoginDetails record in LoginDetailsMapper.deActivateUser.");
 			Statement stmt = con.createStatement();
-			String sql = "UPDATE library.login_details SET active_falg='false'  WHERE member_id in("
+			String sql = "UPDATE login_details SET active_falg='false'  WHERE member_id in("
 					+ LibraryUtills.getArrayToString(memberid) + ")";
 			System.out.println(sql);
 			stmt.execute(sql);

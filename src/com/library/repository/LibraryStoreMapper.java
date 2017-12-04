@@ -49,7 +49,7 @@ public class LibraryStoreMapper implements LibraryStoreFinderInf, LibraryStorePr
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Fetching LockBooks record in LibraryStoreMapper.getLockBooks.");
 			Statement stmt = con.createStatement();
-			String sql = "SELECT book_id, (SELECT isbn FROM library.book_details ld where ld.book_id=ls.book_id) isbn, ls.issuer_id FROM library.library_store ls WHERE ls.lock_flag IS true";
+			String sql = "SELECT book_id, (SELECT isbn FROM book_details ld where ld.book_id=ls.book_id) isbn, ls.issuer_id FROM library_store ls WHERE ls.lock_flag IS true";
 			System.out.println(sql);
 			ResultSet rs = stmt.executeQuery(sql);
 			List<LibraryStore> detailList = new ArrayList<>();
@@ -78,9 +78,9 @@ public class LibraryStoreMapper implements LibraryStoreFinderInf, LibraryStorePr
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Fetching Books record for User in LibraryStoreMapper.getUserBooks.");
 			Statement stmt = con.createStatement();
-			String sql = "SELECT ls.issueId, ls.book_id, ls.member_id, (SELECT booktitle FROM library.book_details ld where ld.book_id=ls.book_id) booktitle,"
+			String sql = "SELECT ls.issueId, ls.book_id, ls.member_id, (SELECT booktitle FROM book_details ld where ld.book_id=ls.book_id) booktitle,"
 					+ " ls.issuer_id, ls.issue_date, ls.return_date, ls.last_date, ls.returned_flag, ls.lock_flag "
-					+ "FROM library.library_store ls " + "WHERE ls.issuer_id = '" + loginId + "' "
+					+ "FROM library_store ls " + "WHERE ls.issuer_id = '" + loginId + "' "
 					+ "	AND ls.returned_flag is not true ";
 			System.out.println(sql);
 			ResultSet rs = stmt.executeQuery(sql);
@@ -117,7 +117,7 @@ public class LibraryStoreMapper implements LibraryStoreFinderInf, LibraryStorePr
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Updating LibraryStore record in LibraryStoreMapper.issueBook.");
 			Statement stmt = con.createStatement();
-			String sql = "UPDATE library.library_store ls SET ls.issue_date = now(), ls.last_date = (NOW() + interval 15 DAY), ls.returned_flag = FALSE, ls.lock_flag=FALSE  WHERE ls.book_id in("
+			String sql = "UPDATE library_store ls SET ls.issue_date = now(), ls.last_date = (NOW() + interval 15 DAY), ls.returned_flag = FALSE, ls.lock_flag=FALSE  WHERE ls.book_id in("
 					+ LibraryUtills.getArrayToString(issueId) + ")";
 			System.out.println(sql);
 			stmt.execute(sql);
@@ -136,7 +136,7 @@ public class LibraryStoreMapper implements LibraryStoreFinderInf, LibraryStorePr
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " DELETING LibraryStore record in LibraryStoreMapper.deleteRequest.");
 			Statement stmt = con.createStatement();
-			String sql = "DELETE FROM library.library_store WHERE book_id in("
+			String sql = "DELETE FROM library_store WHERE book_id in("
 					+ LibraryUtills.getArrayToString(deleteId) + ")";
 			System.out.println(sql);
 			stmt.execute(sql);
@@ -155,7 +155,7 @@ public class LibraryStoreMapper implements LibraryStoreFinderInf, LibraryStorePr
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Updating LibraryStore record in LibraryStoreMapper.returnBooks.");
 			Statement stmt = con.createStatement();
-			String sql = "UPDATE library.library_store ls SET ls.return_date = now(), ls.returned_flag = TRUE  WHERE ls.book_id in("
+			String sql = "UPDATE library_store ls SET ls.return_date = now(), ls.returned_flag = TRUE  WHERE ls.book_id in("
 					+ LibraryUtills.getArrayToString(returnIds) + ")";
 			System.out.println(sql);
 			stmt.execute(sql);

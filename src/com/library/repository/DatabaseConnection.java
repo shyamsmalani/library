@@ -15,7 +15,7 @@ public class DatabaseConnection {
 
 	public static LibraryDatasource getDataSourceInstance(){
 		if(datasource == null){
-			datasource = new LibraryDatasource("jdbc:mysql://localhost:3306/library", 
+			datasource = new LibraryDatasource("jdbc:mysql://localhost:3306/librarynew", 
 					"root", 
 					"", 
 					"com.mysql.jdbc.Driver", 

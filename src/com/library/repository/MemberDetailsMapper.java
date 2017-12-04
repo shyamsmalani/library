@@ -82,8 +82,8 @@ public class MemberDetailsMapper implements MemberDetailsFinderInf, MemberDetail
 			logger.log(Level.INFO, " Fetching Inactive Member record in MemberDetailsMapper.getInactiveMemberList.");
 			Statement stmt = con.createStatement();
 			String sql = "SELECT md.member_id as member_id, md.member_type as member_type, md.first_name first_name, md.last_name last_name, md.email_id email_id "
-					+ "FROM library.login_details ld  "
-					+ "LEFT JOIN  library.member_details md "
+					+ "FROM login_details ld  "
+					+ "LEFT JOIN  member_details md "
 					+ "ON ld.member_id=md.member_id "
 					+ "WHERE ld.active_falg = 'false'";
 			ResultSet rs = stmt.executeQuery(sql);
@@ -115,7 +115,7 @@ public class MemberDetailsMapper implements MemberDetailsFinderInf, MemberDetail
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Creating LoginDetails record in MemberDetailsMapper.deleteMember.");
 			Statement stmt = con.createStatement();
-			String sql = "DELETE FROM library.member_details WHERE member_id in("
+			String sql = "DELETE FROM member_details WHERE member_id in("
 					+ LibraryUtills.getArrayToString(memberId) + ")";
 			System.out.println(sql);
 			stmt.execute(sql);

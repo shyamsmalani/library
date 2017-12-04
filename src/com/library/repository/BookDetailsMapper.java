@@ -44,7 +44,7 @@ public class BookDetailsMapper implements BookDetailsFinderInf, BookDetailsProvi
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Delete BookDetails record in BookDetailsMapper.deletBook.");
 			Statement stmt = con.createStatement();
-			String sql = "DELETE FROM library.book_details WHERE book_id in(" + LibraryUtills.getArrayToString(id)
+			String sql = "DELETE FROM  book_details WHERE book_id in(" + LibraryUtills.getArrayToString(id)
 					+ ")";
 			System.out.println(sql);
 			stmt.execute(sql);
@@ -119,7 +119,7 @@ public class BookDetailsMapper implements BookDetailsFinderInf, BookDetailsProvi
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Updating BookDetails record in BookDetailsMapper.lockBooks.");
 			Statement stmt = con.createStatement();
-			String sql = "UPDATE library.book_details SET book_availiable = FALSE  WHERE book_id in("
+			String sql = "UPDATE  book_details SET book_availiable = FALSE  WHERE book_id in("
 					+ LibraryUtills.getArrayToString(ids) + ")";
 			System.out.println(sql);
 			stmt.execute(sql);
@@ -138,7 +138,7 @@ public class BookDetailsMapper implements BookDetailsFinderInf, BookDetailsProvi
 			con = new DatabaseConnection().getConnection();
 			logger.log(Level.INFO, " Updating BookDetails record in BookDetailsMapper.unlockBooks.");
 			Statement stmt = con.createStatement();
-			String sql = "UPDATE library.book_details SET book_availiable = TRUE  WHERE book_id in("
+			String sql = "UPDATE  book_details SET book_availiable = TRUE  WHERE book_id in("
 					+ LibraryUtills.getArrayToString(ids) + ")";
 			System.out.println(sql);
 			stmt.execute(sql);

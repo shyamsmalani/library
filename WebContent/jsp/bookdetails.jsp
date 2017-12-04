@@ -16,7 +16,7 @@
 			document.bookForm.searchType.focus()
 			return false
 		}
-		if ((searchBy == 'title' || searchBy == 'ISBN') && !isNaN(document.bookForm.booksearch.value)) {
+		if ((searchBy == 'title' || searchBy == 'ISBN') && document.bookForm.booksearch.value == null) {
 			alert("Search String must not be blank.")
 			document.bookForm.booksearch.value = ""
 			document.bookForm.booksearch.focus()
