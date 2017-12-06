@@ -226,7 +226,7 @@
 
 				<div class="image_fl">
 					<img
-						src="${pageContext.request.contextPath}/images/library_images01.jpg"
+						src="${pageContext.request.contextPath}/images/library.jpg"
 						alt="image" />
 				</div>
 
