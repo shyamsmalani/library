@@ -26,8 +26,6 @@ public class BookService implements BookServiceInf {
 	public List<BookDetails> searchBooks(String searchString, String bookType, String searchBy, Boolean onlyAvail,
 			Boolean sameWithType) throws LibraryException {
 		return bookDetailsMapper.searchBooks(searchString, bookType, searchBy,onlyAvail, sameWithType);
-	}
-
-	
+	}	
 
 }

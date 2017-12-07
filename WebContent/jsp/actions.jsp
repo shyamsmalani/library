@@ -33,6 +33,23 @@
 
 		return true
 	}
+	
+	try {
+		function loadDoc() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200
+						&& this.responseText != null) {
+					document.getElementById("message").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("GET", "BookDetailServlet?isbn="
+					+ document.actionForm.isbn.value, true);
+			xhttp.send();
+		}
+	} catch (err) {
+		alert(err.message);
+	}
 </script>
 </head>
 <body>
@@ -87,7 +104,7 @@
 								</tr>
 								<tr>
 									<td>Book ISBN:</td>
-									<td><input type="text" name="isbn" /></td>
+									<td><input type="text" name="isbn"  onchange="loadDoc()"/><div style="color: red;" id="message"></div></td>
 								</tr>
 								<tr>
 									<td>Author Name:</td>
@@ -349,43 +366,36 @@
 					<br />
 				</div>
 				<h3>
-					<font color="blue"> Library Rules and Regulation</font>
+					<font color=blue> Library Latest Books Arrival and Important</font>
 				</h3>
 
 				<p>
-					<a href="http://www.templatemo.com/page/1" target="_parent">Free
-						Projects</a> are provided by <a href="http://www.javatpoint.com"
-						target="_parent">javatpoint.com</a> for everyone. Feel free to
-					download, edit and apply this project for your personal or business
-					websites. Validate <a href="http://www.javatpoint.com">corejava</a>
-					&amp; <a href="http://www.javatpoint.com">servlet</a>. Credit goes
-					to <a href="http://www.javatpoint.com/">Public Domain Pictures</a>
-					for photos used in this template. Nam ut libero at lacus feugiat
-					tincidunt vitae sed ipsum.
+					The <font color=blue>EDU Library</font> is a place for reading, studying,
+					and writing; participating in programs, activities and meetings,
+					and, for using or borrowing Library materials. We have world class books and biggest stocks of different books. Our aim to evolve our services and materials keeps us updating with new stocks of books and other reading material.
+					Please find below list of new Arrivals:
 				</p>
 
 				<div class="cleaner_h20"></div>
 
 				<div class="image_fl">
 					<img
-						src="${pageContext.request.contextPath}/images/library_images01.jpg"
+						src="${pageContext.request.contextPath}/images/library.jpg"
 						alt="image" />
 				</div>
 
 				<div class="section_w250 float_r">
 
 					<ul class="list_01">
-						<li>Praesent condimentum magna ut</li>
-						<li>Nunc luctus eros eu enim gravida ut</li>
-						<li>Phasellus nec ante eget felis</li>
-						<li>Morbi pellentesque tellus adipiscing</li>
-						<li>Nunc accumsan sagittis sem, ut</li>
-						<li>Nunc luctus eros eu enim gravida ut</li>
-						<li>Phasellus nec ante eget felis</li>
+						<li>Exit West - <font color=blue>Mohsin Hamid</font></li>						
+						<li>Little Fires Everywhere - <font color=blue>Celeste Ng </font></li>
+						<li>Manhatten Beach - <font color=blue>Jennifer Egan</font></li>
+						<li>Test Of West - <font color=blue>K. S kamat</font></li>
+						<li>My Story - <font color=blue>A. S. Sainy</font></li>
+						<li>Lincon in the Bardo - <font color=blue>George Sounders</font></li>
 					</ul>
 
 				</div>
-
 
 				<div class="cleaner"></div>
 			</div>

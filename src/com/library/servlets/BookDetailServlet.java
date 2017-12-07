@@ -1,5 +1,7 @@
 package com.library.servlets;
 
+import static com.library.common.ConstantPool.PARAM_BOOK_ISBN;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -42,11 +44,24 @@ public class BookDetailServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String nextJSP = "/jsp/bookdetails.jsp";
-		request.setAttribute("booktypes", LibraryUtills.getBookSubjectType().entrySet());
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-		dispatcher.forward(request, response);
+		String isbn = request.getParameter(PARAM_BOOK_ISBN);
+
+		if (isbn != null) {
+			response.setContentType("text/plain");
+			response.setCharacterEncoding("UTF-8");
+			try {
+				if (!bookService.searchBooks(isbn, null, "ISBN", false, false).isEmpty() ) {
+					response.getWriter().write("ISBN Already Exist!!");
+				}
+			} catch (LibraryException e) {
+				e.printStackTrace();
+			}
+		} else {
+			String nextJSP = "/jsp/bookdetails.jsp";
+			request.setAttribute("booktypes", LibraryUtills.getBookSubjectType().entrySet());
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+			dispatcher.forward(request, response);
+		}
 	}
 
 	/**

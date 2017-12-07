@@ -13,7 +13,7 @@ public interface BookServiceInf {
 			String desc) throws LibraryException; 
 	
 	public void deletBook(String[] id) throws LibraryException; 
-	
+		
 	public List<BookDetails> searchBooks(String searchString, String bookType, 
 			String searchBy, 
 			Boolean onlyAvail, 

@@ -75,7 +75,7 @@ public class LoginDetailsMapper implements LoginDetailsFinderInf, LoginDetailsPr
 			logger.log(Level.INFO, " Fetching User record in LoginDetailsMapper.getLoginUser.");
 			Statement stmt = con.createStatement();
 			String sql = "SELECT member_id, loginId, lpassword, active_falg, login_type  " + "FROM LOGIN_DETAILS "
-					+ "WHERE loginId='" + loginId + "' " + "AND active_falg ='true'";
+					+ "WHERE loginId='" + loginId + "' ";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				rs.close();

@@ -39,7 +39,7 @@
 				document.bookForm.booktype.value = ""
 				document.getElementById("subjectType").style.visibility="collapse";
 			}
-		}
+		}		
 	} catch (err) {
 		alert(err.message);
 	}

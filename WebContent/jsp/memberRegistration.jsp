@@ -82,20 +82,22 @@
 									color="red"><c:out value="${requestScope.errorMessage}"></c:out>
 								</font></td>
 							</tr>
-							<tr>
-								<td>Access Type:</td>
-								<td><select name="userType">
-										<option value="">-select-</option>
-										<option value="admin">Admin</option>
-										<option value="staff">Staff</option>
-										<option value="member">Member</option>
-								</select></td>
-							</tr>
+							<c:if test="${sessionScope.loginType eq 'admin'}">
+								<tr>
+									<td>Access Type:</td>
+									<td><select name="userType">
+											<option value="">-select-</option>
+											<option value="admin">Admin</option>
+											<option value="staff">Staff</option>
+											<option value="member">Member</option>
+									</select></td>
+								</tr>
+							</c:if>
 							<tr>
 								<td>Login Id:</td>
 								<td><input type="text" name="username" id="username"
 									onchange="loadDoc()" />
-								<div style="color: red;" id="message"></div></td>
+									<div style="color: red;" id="message"></div></td>
 							</tr>
 							<tr>
 								<td>Password:</td>
@@ -155,19 +157,18 @@
 
 
 				<h3>
-					<font color=blue> Library Rules and Regulation</font>
+					<font color=blue> About Library EDU </font>
 				</h3>
 
 				<p>
-					<a href="http://www.templatemo.com/page/1" target="_parent">Free
-						Projects</a> are provided by <a href="http://www.javatpoint.com"
-						target="_parent">javatpoint.com</a> for everyone. Feel free to
-					download, edit and apply this project for your personal or business
-					websites. Validate <a href="http://www.javatpoint.com">corejava</a>
-					&amp; <a href="http://www.javatpoint.com">servlet</a>. Credit goes
-					to <a href="http://www.javatpoint.com/">Public Domain Pictures</a>
-					for photos used in this template. Nam ut libero at lacus feugiat
-					tincidunt vitae sed ipsum.
+					The <font color=blue>EDU Library</font> is the biggest library of
+					Bhopal and the well known library chain in the Country by number of
+					items catalogued. It holds well over 150 million items from many
+					countries. As a legal deposit library, the <font color=blue>EDU
+						Library</font> receives copies of all books produced in the Country,
+					including a significant proportion of overseas titles distributed
+					in the India. The Library is a non-departmental public body
+					sponsored by the Department for Culture, Media and Sport.
 				</p>
 
 				<div class="cleaner_h20"></div>
@@ -180,18 +181,13 @@
 
 				<div class="section_w250 float_r">
 
-					<ul class="list_01">
-						<li>Praesent condimentum magna ut</li>
-						<li>Nunc luctus eros eu enim gravida ut</li>
-						<li>Phasellus nec ante eget felis</li>
-						<li>Morbi pellentesque tellus adipiscing</li>
-						<li>Nunc accumsan sagittis sem, ut</li>
-						<li>Nunc luctus eros eu enim gravida ut</li>
-						<li>Phasellus nec ante eget felis</li>
+					<ul style="color: black;">
+						<li>Director : Mr. A. K. Singhal</li>
+						<li>precedent : Mr. S. S. Malani</li>
+						<li>Account Chief : Mrs. P. Kabra</li>
 					</ul>
 
 				</div>
-
 
 				<div class="cleaner"></div>
 			</div>

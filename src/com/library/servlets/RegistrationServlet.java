@@ -79,10 +79,8 @@ public class RegistrationServlet extends HttpServlet {
 			activeflag = "true";
 		}
 
-		if (loginType.equalsIgnoreCase("admin") || loginType.equalsIgnoreCase("staff")) {
-			if (session != null && !"admin".equals((String) session.getAttribute("loginType"))) {
-				request.setAttribute("errorMessage", "Only Administrator can register Admin or Staff.");
-			}
+		if (loginType == null) {
+			loginType = "member";
 		}
 
 		if (!password.equals(cpassword)) {
