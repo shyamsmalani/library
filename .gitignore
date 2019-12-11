@@ -1,0 +1,9 @@
+node_modules
+.idea/
+**.iml
+target/
+node_modules_old
+*.orig
+src/main/webapp/resources/generated/
+*.log
+logs/
