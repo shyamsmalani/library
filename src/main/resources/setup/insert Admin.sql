@@ -1,0 +1,3 @@
+INSERT INTO member_details (first_name, last_name, phone_num, email_id, address, unique_id, id_type, member_type) VALUES ( 'shyam sundar', 'malani', '08956171564', 'shyammalani@mail.com', 'NA', 'Test123', 'pan', 'admin' )
+INSERT INTO login_details (member_id, loginId, lpassword, active_falg, login_type) VALUES ( member_id, 'shyam123', 'shyam123', 'true', 'admin' )
+--INSERT INTO login_details (member_id, loginId, lpassword, active_falg, login_type) VALUES ( '1', 'shyam123', 'shyam123', 'true', 'admin' )

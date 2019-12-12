@@ -80,7 +80,7 @@ public class LibraryStoreMapper implements LibraryStoreFinderInf, LibraryStorePr
 			Statement stmt = con.createStatement();
 			String sql = "SELECT ls.issueId, ls.book_id, ls.member_id, (SELECT booktitle FROM book_details ld where ld.book_id=ls.book_id) booktitle,"
 					+ " ls.issuer_id, ls.issue_date, ls.return_date, ls.last_date, ls.returned_flag, ls.lock_flag "
-					+ "FROM library_store ls " + "WHERE ls.issuer_id = '" + loginId + "' "
+					+ "FROM library_store ls " + "WHERE ls.issuer_id = '" + loginId + "' AND ls.issue_date != '1970-01-01 00:00:00'"
 					+ "	AND ls.returned_flag is not true ";
 			System.out.println(sql);
 			ResultSet rs = stmt.executeQuery(sql);

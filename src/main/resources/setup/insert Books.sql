@@ -1,0 +1,49 @@
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'mediacal Book 1', '123456789', 'Medical Description 1', 'Medical Author 1', 'medical', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'mediacal Book 2', '123456719', 'Medical Description 2', 'Medical Author 1', 'medical', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'mediacal Book 3', '123456729', 'Medical Description 3', 'Medical Author 1', 'medical', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'mediacal Book 4', '123456739', 'Medical Description 4', 'Medical Author 1', 'medical', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'mediacal Book 5', '123456749', 'Medical Description 5', 'Medical Author 2', 'medical', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'mediacal Book 6', '123456759', 'Medical Description 6', 'Medical Author 2', 'medical', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'mediacal Book 7', '123456769', 'Medical Description 7', 'Medical Author 3', 'medical', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'mediacal Book 8', '123456779', 'Medical Description 8', 'Medical Author 3', 'medical', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'mediacal Book 9', '123456799', 'Medical Description 9', 'Medical Author 3', 'medical', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Fiction Book 1', '123456189', 'Fiction Description 1', 'Fiction Author 1', 'fiction', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Fiction Book 2', '123456219', 'Fiction Description 2', 'Fiction Author 1', 'fiction', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Fiction Book 3', '123456329', 'Fiction Description 3', 'Fiction Author 1', 'fiction', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Fiction Book 4', '123456439', 'Fiction Description 4', 'Fiction Author 1', 'fiction', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Fiction Book 5', '123456549', 'Fiction Description 5', 'Fiction Author 2', 'fiction', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Fiction Book 6', '123456659', 'Fiction Description 6', 'Fiction Author 2', 'fiction', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Fiction Book 7', '123456769', 'Fiction Description 7', 'Fiction Author 3', 'fiction', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Fiction Book 8', '123456879', 'Fiction Description 8', 'Fiction Author 3', 'fiction', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Fiction Book 9', '123456999', 'Fiction Description 9', 'Fiction Author 3', 'fiction', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Biography Book 1', '123451789', 'Biography Description 1', 'Biography Author 1', 'biography', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Biography Book 2', '123452719', 'Biography Description 2', 'Biography Author 1', 'biography', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Biography Book 3', '123453729', 'Biography Description 3', 'Biography Author 1', 'biography', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Biography Book 4', '123454739', 'Biography Description 4', 'Biography Author 1', 'biography', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Biography Book 5', '123455749', 'Biography Description 5', 'Biography Author 2', 'biography', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Biography Book 6', '123456759', 'Biography Description 6', 'Biography Author 2', 'biography', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Biography Book 7', '123457769', 'Biography Description 7', 'Biography Author 3', 'biography', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Biography Book 8', '123458779', 'Biography Description 8', 'Biography Author 3', 'biography', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Biography Book 9', '123459799', 'Biography Description 9', 'Biography Author 3', 'biography', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Novels Book 1', '123411789', 'Novels Description 1', 'Novels Author 1', 'novels', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Novels Book 2', '123422719', 'Novels Description 2', 'Novels Author 1', 'novels', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Novels Book 3', '123433729', 'Novels Description 3', 'Novels Author 1', 'novels', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Novels Book 4', '123444739', 'Novels Description 4', 'Novels Author 1', 'novels', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Novels Book 5', '123455749', 'Novels Description 5', 'Novels Author 2', 'novels', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Novels Book 6', '123466759', 'Novels Description 6', 'Novels Author 2', 'novels', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Novels Book 7', '123477769', 'Novels Description 7', 'Novels Author 3', 'novels', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Novels Book 8', '123488779', 'Novels Description 8', 'Novels Author 3', 'novels', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'Novels Book 9', '123499799', 'Novels Description 9', 'Novels Author 3', 'novels', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'ComputerScience Book 1', '123111789', 'ComputerScience Description 1', 'ComputerScience Author 1', 'computerScience', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'ComputerScience Book 2', '123222719', 'ComputerScience Description 2', 'ComputerScience Author 1', 'computerScience', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'ComputerScience Book 3', '123333729', 'ComputerScience Description 3', 'ComputerScience Author 1', 'computerScience', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'ComputerScience Book 4', '123444739', 'ComputerScience Description 4', 'ComputerScience Author 1', 'computerScience', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'ComputerScience Book 5', '123555749', 'ComputerScience Description 5', 'ComputerScience Author 2', 'computerScience', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'ComputerScience Book 6', '123666759', 'ComputerScience Description 6', 'ComputerScience Author 2', 'computerScience', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'ComputerScience Book 7', '123777769', 'ComputerScience Description 7', 'ComputerScience Author 3', 'computerScience', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'ComputerScience Book 8', '123888779', 'ComputerScience Description 8', 'ComputerScience Author 3', 'computerScience', TRUE );
+INSERT INTO book_details (booktitle, isbn, discription, author, subject_type, book_availiable ) VALUES ( 'ComputerScience Book 9', '123999799', 'ComputerScience Description 9', 'ComputerScience Author 3', 'computerScience', TRUE );
+
+
+
+
