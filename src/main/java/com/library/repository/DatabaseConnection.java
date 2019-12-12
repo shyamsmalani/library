@@ -15,9 +15,9 @@ public class DatabaseConnection {
 
 	public static LibraryDatasource getDataSourceInstance(){
 		if(datasource == null){
-			datasource = new LibraryDatasource("jdbc:mysql://localhost:3306/librarynew",  // url
+			datasource = new LibraryDatasource("jdbc:mysql://localhost:3306/librarydb",  // url
 					"root", // username
-					"", //password
+					"admin", //password
 					"com.mysql.jdbc.Driver", 
 					10, 
 					5, 
